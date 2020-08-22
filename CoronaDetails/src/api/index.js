@@ -30,8 +30,8 @@ export const fetchDailyData = async () =>
 		const { data } = await axios.get(`${url}/daily`);
 		
 		// reportDate: date : We are taking out the reportDate prop from the data array and storing it in a new variable called date.
-		// We are traversing the whole data array and returning a new array ( as map always return a new array ) which consists of equal
-		// number of elements to that of 'data' array. Each element of a new array will be an object which consists of three key-value
+		// We are traversing the whole data array and returning a new array ( as map always returns a new array ) which consists of same
+		// number of elements as that of 'data' array. Each element of a new array will be an object which consists of three key-value
 		// pairs : confirmed , deaths and date.
 		return data.map(({ confirmed, deaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
 	} 
